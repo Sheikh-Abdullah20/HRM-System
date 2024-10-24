@@ -27,7 +27,7 @@ class AuthenticatedSessionController extends Controller
         $request->authenticate();
 
         $request->session()->regenerate();
-
+        Toastr()->success( "Hey..!! ". Auth::user()->name . " Welcome Back");
         return redirect()->intended(route('dashboard', absolute: false));
     }
 
